@@ -29,7 +29,8 @@ namespace ShowKnownTechprints
 
     [HarmonyPatch(typeof(TransferableUIUtility))]
     [HarmonyPatch("DoExtraIcons")]
-    internal static class DoExtraIconsTweak
+	[StaticConstructorOnStartup]
+	internal static class DoExtraIconsTweak
 	{
 		private static readonly Texture2D TechprintIcon_Missing = ContentFinder<Texture2D>.Get("UI/Icons/TechprintIcon_Missing");
 		private static readonly Texture2D TechprintIcon_Part = ContentFinder<Texture2D>.Get("UI/Icons/TechprintIcon_Part");
